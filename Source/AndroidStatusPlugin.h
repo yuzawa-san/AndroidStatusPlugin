@@ -10,8 +10,8 @@
 #import <Adium/AIPlugin.h>
 
 @interface AndroidStatusPlugin : NSObject <AIPlugin> {
-	NSLock *lock;
-	NSString *jabberService;
+    NSLock *lock;
+    NSString *jabberService;
 }
 
 bool get_mobility(PurpleBuddy *b);
