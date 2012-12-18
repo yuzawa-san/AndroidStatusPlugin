@@ -82,19 +82,6 @@
     }
 }
 
-- (void)accountConnected:(NSNotification *)notification
-{
-    AIAccount *account = [notification object];
-    for (AIListObject *contact in [account contacts]) {
-        [lock lock];
-        @try {
-            [self contactStatusUpdateReceived:contact];
-        } @finally {
-            [lock unlock];
-        }
-    }
-}
-
 bool get_mobility(PurpleBuddy *b)
 {
     NSString* resourceStr;
