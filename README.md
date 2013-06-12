@@ -1,7 +1,7 @@
 AndroidStatusPlugin
 ===================
 
-*version 1.1*
+*version 1.2*
 
 James Yuzawa: 
 [http://www.jyuzawa.com](http://www.jyuzawa.com/)

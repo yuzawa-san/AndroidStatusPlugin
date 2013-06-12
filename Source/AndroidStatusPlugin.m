@@ -42,7 +42,7 @@
 
 - (NSString *)pluginVersion
 {
-    return @"1.1";
+    return @"1.2";
 }
 
 - (NSString *)pluginDescription
@@ -121,9 +121,12 @@ bool get_mobility(PurpleBuddy *b)
         // check resource if it exists
         if (jbr && jbr->name){
             resourceStr=[NSString stringWithUTF8String:(jbr->name)];
-            // do find substring operation
-            NSRange rng = [resourceStr rangeOfString:@"android" options:NSCaseInsensitiveSearch];
-            return (rng.location != NSNotFound);
+            // new android
+            if([resourceStr hasPrefix:@"MessagingA"]) return YES;
+            // new ios?
+            if([resourceStr hasPrefix:@"MessagingB"]) return YES;
+            // old android
+            if([[resourceStr lowercaseString] hasPrefix:@"android"]) return YES;
         }
     }
     return NO;
